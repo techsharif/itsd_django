@@ -1,4 +1,4 @@
 {#{{ students }}#}
 {% for student in students %}
-    {{ student.name }}<br>
+    <a href="details/{{student.id}}">{{ student.name }}</a><br>
 {% endfor %}

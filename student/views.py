@@ -11,3 +11,8 @@ class StudentListView(View):
         students = Student.objects.all()
         return render(request,'student/student_list.html',{'students':students})
 
+class StudentDetailsView(View):
+    def get(self,request,id):
+        student = Student.objects.get(id=id)
+        return render(request,'student/student_details.html',{'student':student})
+

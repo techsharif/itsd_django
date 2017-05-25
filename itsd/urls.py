@@ -17,10 +17,10 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from itsd.views import HomeView
-from student.views import StudentListView
+from student.views import StudentListView, StudentDetailsView
 
 urlpatterns = [
-    url(r'^$', HomeView.as_view()),
-    url(r'^student-list$', StudentListView.as_view()),
+    url(r'^$', StudentListView.as_view()),
     url(r'^admin/', admin.site.urls),
+    url(r'(?P<id>\d+)/$',StudentDetailsView.as_view())
 ]
